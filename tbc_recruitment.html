@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY PROJECT</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		
+        <!-- <link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap4.min.css">
+		<script src="js/jquery.min.js"></script>
+		<script src="js/popper.min.js"></script>
+		<script src="js/bootstrap.min.js"></script> -->
+
+		<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+		<script src="print.js"></script>
+
+		<style>
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+ /* ============ only desktop view ============ */
+ @media all and (min-width: 992px) {
+	.navbar .nav-item .dropdown-menu{  display:block; opacity: 0;  visibility: hidden; transition:.3s; margin-top:0;  }
+	.navbar .nav-item:hover .nav-link{ color: #fff;  }
+	.navbar .dropdown-menu.fade-down{ top:80%; transform: rotateX(-75deg); transform-origin: 0% 0%; }
+	.navbar .dropdown-menu.fade-up{ top:180%;  }
+	.navbar .nav-item:hover .dropdown-menu{ transition: .3s; opacity:1; visibility:visible; top:100%; transform: rotateX(0deg); }
+}		
+   /* ============ desktop view .end// ============ */
+        *{
+            padding: 0;
+            margin: 0;
+        }
+    header{
+        text-align: center;
+        background-color: rgb(94, 194, 197);
+        padding: 20px;
+    }    
+    #home{
+				 background: #fdfdfd;
+				 color: rgb(8, 8, 8);;
+         font-size: large;
+			 }
+      
+  body{
+    overflow-x: hidden;
+  }
+  
+    /* navigation */
+   ul li{
+        float:left;
+        height:50px;
+      
+        width:190px;
+        text-align: center;
+    }
+    ul li a:hover{
+        background-color: rgb(134, 195, 235);
+        height: 43px;
+     } 
+     ul li ul li a{
+       color: white;
+     }
+     ul li ul li a:hover{
+       color:rgb(5, 5, 5);
+       background-color: white;
+     }
+   
+    #logo{
+        
+        margin-left: -12%;
+        /* background-color: rgb(181, 227, 241);
+        border-radius:50px; */
+        position:relative;
+    }
+    .footerp{
+				color: white;
+			}
+    
+      h6{
+        color:rgb(221, 228, 196);
+      }
+
+      /* modal form */
+      .modal-login {		
+	color: #636363;
+	width: 350px;
+}
+.modal-login .modal-content {
+	padding: 20px;
+	border-radius: 5px;
+	border: none;
+}
+.modal-login .modal-header {
+	border-bottom: none;   
+	position: relative;
+	justify-content: center;
+}
+.modal-login h4 {
+	text-align: center;
+	font-size: 26px;
+	margin: 30px 0 -15px;
+}
+.modal-login .form-control:focus {
+	border-color: #70c5c0;
+}
+.modal-login .form-control, .modal-login .btn {
+	min-height: 40px;
+	border-radius: 3px; 
+}
+.modal-login .close {
+	position: absolute;
+	top: -5px;
+	right: -5px;
+}	
+.modal-login .modal-footer {
+	background: #ecf0f1;
+	border-color: #dee4e7;
+	text-align: center;
+	justify-content: center;
+	margin: 0 -20px -20px;
+	border-radius: 5px;
+	font-size: 13px;
+}
+.modal-login .modal-footer a {
+	color: #999;
+}		
+.modal-login .avatar {
+	position: absolute;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	top: -70px;
+	width: 95px;
+	height: 95px;
+	border-radius: 50%;
+	z-index: 9;
+	background: #60c7c1;
+	padding: 15px;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+.modal-login .avatar img {
+	width: 100%;
+}
+.modal-login.modal-dialog {
+	margin-top: 80px;
+}
+.modal-login .btn, .modal-login .btn:active {
+	color: #fff;
+	border-radius: 4px;
+	background: #60c7c1 !important;
+	text-decoration: none;
+	transition: all 0.4s;
+	line-height: normal;
+	border: none;
+}
+.modal-login .btn:hover, .modal-login .btn:focus {
+	background: #45aba6 !important;
+	outline: none;
+}
+.trigger-btn {
+	display: inline-block;
+	margin: 100px auto;
+}
+
+    .wrapper .button{
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  float: left;
+  margin: 0 5px;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease-out;
+}
+.wrapper .button:hover{
+  width: 200px;
+}
+.wrapper .button .icon{
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  border-radius: 50px;
+  box-sizing: border-box;
+  line-height: 60px;
+  transition: all 0.3s ease-out;
+}
+.wrapper .button:nth-child(1):hover .icon{
+  background: #4267B2;
+}
+.wrapper .button:nth-child(2):hover .icon{
+  background: #1DA1F2;
+}
+.wrapper .button:nth-child(3):hover .icon{
+  background: #E1306C;
+}
+
+
+
+.wrapper .button:nth-child(4):hover .icon{
+  background: #ff0000;
+}
+.wrapper .button .icon i{
+  font-size: 25px;
+  line-height: 60px;
+  transition: all 0.3s ease-out;
+}
+.wrapper .button:hover .icon i{
+  color: #fff;
+}
+.wrapper .button span{
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 60px;
+  margin-left: 10px;
+  transition: all 0.3s ease-out;
+}
+.wrapper .button:nth-child(1) span{
+  color: #4267B2;
+}
+.wrapper .button:nth-child(2) span{
+  color: #1DA1F2;
+}
+.wrapper .button:nth-child(3) span{
+  color: #E1306C;
+}
+.wrapper .button:nth-child(4) span{
+  color: #ff0000;
+}
+#as{
+margin-left:200px;
+margin-top:60px;
+}
+#jay{
+margin-top:60px;
+margin-left:150px;
+}
+p{
+  text-align: justify;
+}
+
+
+#ab{
+ text-align:center;
+ padding:12px;
+ font-family:aparajita;
+ margin-bottom:10px;
+}
+#cd{
+background-color: rgb(197, 194, 190);
+}
+#ef{
+text-align:left;
+
+margin-left:-110px;
+}
+ 
+/* footer */
+  h6{
+    color:rgb(221, 228, 196);
+  }
+
+
+
+   /* cards */
+   .abhi{
+       
+       /* position:relative;
+       width:900px;
+       display:flex;
+       justify-content: space-around; */
+       /* margin-left: 150px; */
+       
+       
+   }
+   .abhi .card{
+       position:relative;
+       width:250px;
+       background: linear-gradient(0deg,#eee7e7,rgb(245, 239, 239),#d5ecf3);
+       /* display:flex; */
+       justify-content: center;
+       align-items: center;
+       height:350px;
+       border-radius: 4px;
+       text-align:center;
+       overflow:hidden;
+       transition: 0.5s;
+       
+       
+   }
+   .abhi .card:hover
+   {
+       transform:translateY(-10px);
+       box-shadow:0 15px 35px rgba(0,0,0,.5);
+   }
+   .abhi .card::before
+   {
+       content:'';
+       position:absolute;
+       top:0;
+       left:0;
+       width:100%;
+       height:100%;
+       background: rgba(255,255,255,.03);
+       pointer-events:none;
+       z-index: 1;
+   }
+   .percent
+   {
+       position:relative;
+       width:150px;
+       height:150px;
+       border-radius:50%;
+       box-shadow:inset 0 0 50px rgb(192, 187, 187);
+       background:rgb(248, 246, 244);
+       z-index:1000;
+   }
+   .percent .number{
+       position:absolute;
+       top:0;
+       left:0;
+       width:100%;
+       height:100%;
+       display:flex;
+       justify-content: center;
+       align-items:center;
+       border-radius:50%;
+   }
+   .percent .number .h2
+   {
+       color:#777;
+       font-weight:700;
+       font-size:40px;
+       transition: 0.5s;
+   }
+   
+   .card:hover .percent .number h2
+   {
+   color:#fff;
+   font-size:60px;
+   }
+   .percent .number h2 span{
+       font-size:24px;
+       color:#777;
+       transition:0.5%;
+   }
+   .card:hover .percent .number h2{
+       color:rgb(59, 61, 175);
+   }
+   .text
+   {
+       position:relative;
+       color:rgb(116, 119, 119);
+       font-weight:700;
+       font-size:18px;
+       letter-spacing: 1px;
+       text-transform: uppercase;
+       transition:0.5s;
+   }
+   .card:hover .text
+   {
+    color:rgb(228, 25, 136);
+   }
+
+
+   svg{
+       position:relative;
+       width:150px;
+       height:150px;
+       z-index: 1000;
+   }
+   svg circle{
+       width:100%;
+       height:100%;
+       fill:none;
+       stroke:#32e2e2;
+       stroke-width:10;
+       stroke-linecap:round;
+       transform:translate(5px,5px);
+   }
+   #comp{
+     width:100%;
+     height:120;
+   }
+   #web{
+     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+     text-align:center;
+   }
+   #gh{
+     font-family:algerian;
+     text-align:center;
+     color:rgb(82, 74, 194);
+   }
+
+
+  
+       
+        #first{
+          text-align: center;
+          font-family: bold;
+          color: #4267B2;
+        }
+
+
+      
+        .wrapp{
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+        }
+        .card{
+            width: 280px;
+            height: 360px;
+            /* padding: 2rem 1rem; */
+            background-color: #fff;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            box-shadow: 0px 7px 10px rgba(0,0,0,0.5);
+            transition: 0.5s ease-in-out;
+           
+        }
+        .card:hover{
+            transform: translateY(20px);
+        }
+        .card::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height:100%;
+            background: linear-gradient(to bottom, rgba(0,176,155,0.5), rgba(150,201,61,1));
+            z-index: 2;
+            transition: 0.5s all;
+            opacity: 0;
+        }
+        .card:hover::before{
+            opacity: 1;
+        }
+        .card img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0%;
+            left: 0%;
+        }
+        .card .info{
+         
+            position: relative;
+            z-index: 3;
+            color: #fff;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: 0.5s all;
+        }
+        .card:hover .info{
+            opacity: 1;
+            transform: translateY(100px);
+        }
+        .card .info h1{
+            margin: 0%;
+            font-family: 'lato', sans-serif;
+        }
+        .card .info p{
+          font-family: 'lato', sans-serif;
+            letter-spacing: 1px;
+            font-size: 15px;
+            margin-top: 8px;
+            margin-bottom: 20px;
+        }
+        #foot{
+  color: white;
+  text-decoration: none;
+}
+        @media (max-width: 526px) {
+  header .container-fluid img{
+    width: 30%;
+    height: 100%;
+  }
+}
+@media (max-width: 526px) {
+  header .container-fluid h1{
+    font-size: 30px;
+  }
+}
+@media (max-width: 526px) {
+  nav #main_nav ul li{
+    width: auto;
+  }
+}
+@media (max-width: 900px) {
+  nav #main_nav ul li{
+    width: auto;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container-fluid">
+       <div class="row">
+          <div class="col-lg-2 col-md-4 ">
+              <img  src="images\homepage\tbc logo1.png"  alt="NO IMG" width="240px" height="80">
+          </div>
+          <div class="col-lg-7 col-md-8 ">
+              <center>
+                <h1 style="margin-top:36px; font-family: Vani; color: white;">TBC Consultency Services</h1>
+              </center>
+              </div>
+              
+              <div class="col-md-4 col-lg-3 my-4 " >               
+                <a href ="registration.html" class="btn btn-info " role="button" >Registration</a>
+              
+<!-- modal login form -->                 
+                 
+                  <a   href ="#myModal" class="btn btn-info" role="button"  data-toggle="modal">Login</a>
+                
+                  <div id="myModal" class="modal fade">
+                    <div class="modal-dialog modal-login">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <div class="avatar">
+                            <img src="459577-middle.pn" alt="Avatar">
+                          </div>				
+                          <h4 class="modal-title">Member Login</h4>	
+                                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                          <form action="test.php" method="post">
+                            <div class="form-group">
+                              <input type="text" class="form-control" name="username" placeholder="Username" required="required">		
+                            </div>
+                            <div class="form-group">
+                              <input type="password" class="form-control" name="password" placeholder="Password" required="required">	
+                            </div>        
+                            <div class="form-group">
+                              <button type="submit" class="btn btn-primary btn-lg btn-block login-btn">Login</button>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="modal-footer">
+                          <a href="#">Forgot Password?</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>     
+                                
+             </div>
+            
+          </div>
+      
+  </div>
+</header>
+<nav  class="navbar navbar-expand-md bg-dark navbar-dark sticky-top">
+  <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#main_nav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="main_nav">
+  
+   <ul class="navbar-nav justify-content-center">
+    <li class="nav-item active"> <a class="nav-link" href="tbc_index.html">Home </a> </li>
+    <li class="nav-item active"><a class="nav-link" href="tbc_about_us.html"> About Us </a></li>
+    <li class="nav-item active"><a class="nav-link" href="tbc_services.html"><b> Services</b> </a></li>
+    <li class="nav-item active"><a id="home"class="nav-link" href="tbc_recruitment.html">Recruitments</a></li>
+    <li class="nav-item active"><a class="nav-link" href="tbc_contact.html"> Contact us </a></li>
+  </ul>
+    
+  <!-- </div>  navbar-collapse.// -->
+  
+  </nav> <!--end navigation-->
+    
+<br><br><br> 
+<div class="bar">
+  <h1 id="first"><u>Recruitment</u></h1>
+</div>
+<br><br><br><center>
+<div class="container-fluid">
+    <div class="abhi">
+      <div class="row">
+      <div class="col-md-6 col-lg-3">
+    <div class="card">
+        <div class="box">
+            <div class="percent">
+                <svg>
+                    <circle cx="70" cy="70" r="70"></circle>
+                    <circle cx="70" cy="70" r="70"></circle>
+                </svg>
+                <div class="number">
+                    <h2>10K+</h2>
+                </div>
+            </div>
+            <h2 class="text">Placements<br>Achievers</h2>
+        </div>
+    </div>
+    </div>
+    <div class="col-md-6  col-lg-3">
+    <div class="card">
+        <div class="box">
+            <div class="percent">
+                <svg>
+                    <circle cx="70" cy="70" r="70"></circle>
+                    <circle cx="70" cy="70" r="70"></circle>
+                </svg>
+                <div class="number">
+                    <h2>100+</h2>
+                </div>    
+            </div>
+            <h2 class="text">Monthly<br>Placements</h2>
+        </div>
+    </div>
+    </div>
+    <div class="col-md-6  col-lg-3">
+    <div class="card">
+        <div class="box">
+            <div class="percent">
+                <svg>
+                    <circle cx="70" cy="70" r="70"></circle>
+                    <circle cx="70" cy="70" r="70"></circle>
+                </svg>
+                <div class="number">
+                    <h2>50+</h2>
+                </div>    
+            </div>
+            <h2 class="text">Recruitment <br> Companies</h2>
+        </div>
+    </div></div>
+    <div class="col-md-6  col-lg-3">
+    <div class="card">
+      <div class="box">
+          <div class="percent">
+              <svg>
+                  <circle cx="70" cy="70" r="70"></circle>
+                  <circle cx="70" cy="70" r="70"></circle>
+              </svg>
+              <div class="number">
+                  <h2>20+</h2>
+              </div>    
+          </div>
+          <h2 class="text">Drives every <br>Month</h2>
+      </div>
+  </div></div>
+  </div></div></div></center>
+ 
+   <br><br>
+   <hr>
+   <br><br><br>
+   <div class="ef">
+     <h1 id="first"><u>Our Alumni Work with Top Organisation</u></h1>
+<br><br>
+<div class="row">
+  
+  <div class="col-sm-2">
+  <img id="comp"src="images\recruitment\Hcl.jpg">
+  </div>
+    
+  <div class="col-sm-2">
+    <img id="comp"src="images\recruitment\wipro.jpg">
+  </div>
+  <div class="col-sm-2">
+    <img id="comp"src="images\recruitment\accenture.png">
+  </div>
+  <div class="col-sm-2">
+    <img id="comp"src="images\recruitment\capgemini.jpeg">
+  </div>
+  <div class="col-sm-2">
+    <img id="comp"src="images\recruitment\tata.jpg">
+  </div>
+  <div class="col-sm-2">
+    <img id="comp"src="images\recruitment\tbc-maintec.jpg">
+  </div>
+  </div>
+<div class="row">
+  <div class="col-sm-2">
+    <img id="comp"src="images\recruitment\deloitte.jpg">
+  </div>
+  <div class="col-sm-2">
+    <img id="comp"src="images\recruitment\microsoft.jpg">
+  </div>
+  <div class="col-sm-2">
+    <img id="comp"src="images\recruitment\tbc-polaris.jpg">
+  </div>
+  <div class="col-sm-2">
+    <img id="comp"src="images\recruitment\tbc-justdial.jpg">
+  </div>
+  <div class="col-sm-2">
+    <img id="comp"src="images\recruitment\tbc-genpact.jpg">
+    </div>
+   <div class="col-sm-2">
+    <img id="comp"src="images\recruitment\renault.jpg">
+  </div>
+  
+</div>
+<div class="row">
+
+  <div class="col-sm-2">
+    <img id="comp"src="images\recruitment\oracle.png">
+  </div>
+  <div class="col-sm-2">
+    <img id="comp"src="images\recruitment\mindtree.jpg">
+  </div>
+  <div class="col-sm-2">
+    <img id="comp"src="images\recruitment\newgen.jpg">
+  </div>
+  <div class="col-sm-2">
+    <img id="comp"src="images\recruitment\align.jpg">
+  </div>
+  <div class="col-sm-2">
+    <img id="comp"src="images\recruitment\techmahindra.jpg">
+    </div>
+  <div class="col-sm-2">
+    <img id="comp"src="images\recruitment\mphasislogo.jpg">
+  </div>
+</div><br><br><br>
+<div class="container">
+<div class="row">
+  <div class="col-sm-3">
+    <img src="">
+  </div>
+</div>
+</div>
+
+
+
+
+  <center>
+    <div class="container">
+      <div class="wrapp">
+      <div class="row">
+<div class="col-md-6 col-lg-3">  
+  <div class="card">
+      <img src="images\recruitment\feedback14.webp" alt="gkjsdkjvkj">
+      <div class="info">
+          <h2>V.Kavitha</h2> <h4><br> TCS <br> Front End Devoloper</h4>
+          <p>--"Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus a illo minima neque vero. Qui dolorem reiciendis"</p>
+      </div>
+  </div>
+  </div>
+  
+  <div class="col-md-6 col-lg-3"> 
+  <div class="card">
+      <img src="images\recruitment\feedback2.jpg" alt="gkjsdkjvkj">
+      <div class="info">
+          <h2>B.Pavitra</h2> <h4><br> Deepija <br> Back End Devoloper</h4>
+          <p>--"Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus a illo minima neque vero. Qui dolorem reiciendis"</p>
+      </div>
+  </div>
+</div>
+
+<div class="col-md-6 col-lg-3"> 
+  <div class="card">
+      <img src="images\recruitment\feedback3.jpg" alt="gkjsdkjvkj">
+      <div class="info">
+          <h2>B.Akshay</h2><h4><br> Infosys <br> Fullstack Devoloper</h4>
+          <p>--"Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus a illo minima neque vero. Qui dolorem reiciendis"</p>
+      </div>
+  </div>
+</div>
+
+<div class="col-md-6 col-lg-3">
+  <div class="card">
+      <img src="images\recruitment\feedback18.jpg" alt="gkjsdkjvkj">
+      <div class="info">
+        <h2>Supreeth Singh</h2><h4><br> Amazon <br> Fullstack Devoloper</h4>
+        <p>--"Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus a illo minima neque vero. Qui dolorem reiciendis"</p>
+      </div>
+  </div>
+  </div>
+</div></div><br><br><br>
+<div class="wrapp">
+  <div class="row">
+    <div class="col-md-4">
+  <div class="card">
+      <img src="images\recruitment\feedback4.jpeg" alt="gkjsdkjvkj">
+      <div class="info">
+        <h2>B.Harish</h2><h4><br> Flipkart <br> Devops</h4>
+        <p>--"Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus a illo minima neque vero. Qui dolorem reiciendis"</p>
+      </div>
+  </div>
+  </div>
+  <div class="col-md-4">
+  <div class="card">
+      <img src="images\recruitment\feedback5.jpg" alt="gkjsdkjvkj">
+      <div class="info">
+        <h2>P.Nava Raj</h2><h4><br> Ebay <br> Fullstack Devoloper</h4>
+        <p>--"Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus a illo minima neque vero. Qui dolorem reiciendis"</p>
+      </div>
+  </div>
+  </div>
+  <div class="col-md-4">
+  <div class="card">
+      <img src="images\recruitment\feedback7.jpg" alt="gkjsdkjvkj">
+      <div class="info">
+        <h2>S.Raju</h2><h4><br> Paytm <br> WeB Devoloper</h4>
+        <p>--"Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus a illo minima neque vero. Qui dolorem reiciendis"</p>
+      </div>
+  </div>
+  </div>
+</div>
+</div>
+<br><br><br>
+
+<div class="wrapp">
+  <div class="row"> 
+    
+    <div class="col-md-6 col-lg-3">
+  <div class="card">
+      <img src="images\recruitment\feedback8.jpg" alt="gkjsdkjvkj">
+      <div class="info">
+          <h2>Sri Raj</h2><h4><br> Microsoft <br> Fullstack Devoloper</h4>
+          <p>--"Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus a illo minima neque vero. Qui dolorem reiciendis"</p>
+      </div>
+  </div>
+  </div>
+  <div class="col-md-6 col-lg-3">
+  <div class="card">
+      <img src="images\recruitment\feedback9.jpg" alt="gkjsdkjvkj">
+      <div class="info">
+        <h2>Varun</h2><h4><br> accenture <br> Fullstack Devoloper</h4>
+        <p>--"Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus a illo minima neque vero. Qui dolorem reiciendis"</p>
+      </div>
+  </div>
+  </div>
+  <div class="col-md-6 col-lg-3">
+  <div class="card">
+      <img src="images\recruitment\feedback16.jpg" alt="gkjsdkjvkj">
+      <div class="info">
+        <h2>Nazeera</h2><h4><br> Delloite <br> Fullstack Devoloper</h4>
+        <p>--"Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus a illo minima neque vero. Qui dolorem reiciendis"</p>
+      </div>
+  </div>
+  </div>
+  <div class="col-md-6 col-lg-3">
+    <div class="card">
+        <img src="images\recruitment\feedback15.jpg" alt="gkjsdkjvkj">
+        <div class="info">
+          <h2>Sandhya</h2><h4><br> HCL <br> Fullstack Devoloper</h4>
+          <p>--"Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus a illo minima neque vero. Qui dolorem reiciendis"</p>
+        </div>
+    </div>
+    </div>
+</div>
+
+  </div>
+</div></center>
+
+
+<!-- from here footer starts -->
+    <footer class="text-center text-lg-start bg-light text-muted">
+  
+        <section class="" style="background: rgb(22, 30, 47);">
+          <div class="container text-center text-md-start mt-5">
+           
+            <div class="row mt-3">
+              
+              <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4 my-3">
+                
+                <h6 class="text-uppercase fw-bold mb-4 text-light">
+                  <i class="fas fa-gem me-3" ></i>TBC Consultency Services.
+                </h6>
+                <p class="footerp" style="text-align: justify;">
+                   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates rem id dolorum amet corporis possimus soluta cumque ab exercitationem reprehenderit!
+                </p>
+              </div>
+             
+              <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4 my-3">
+                
+                <h6 class="text-uppercase fw-bold mb-4 text-light" >
+                  Branches
+                </h6>
+                <p class="footerp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a id="foot" href="#!" class="text-reset">Vizag</a>
+                </p>
+                <p class="footerp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a id="foot" href="#!" class="text-reset">Warangal</a>
+                </p class="footerp">
+                <p class="footerp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a id="foot" href="#!" class="text-reset">Hyderabad</a>
+                </p>
+                <p class="footerp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a id="foot" href="#!" class="text-reset">Karimnagar</a>
+                </p>
+              </div>
+              
+              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 my-3">
+                
+                <h6 class="text-uppercase fw-bold mb-4 text-light">
+                  Useful links
+                </h6>
+                <p class="footerp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a id="foot" href="#!" class="text-reset">Pricing</a>
+                </p>
+                <p class="footerp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a id="foot" href="#!" class="text-reset">Settings</a>
+                </p>
+                <p class="footerp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a id="foot" href="#!" class="text-reset">Orders</a>
+                </p>
+                <p class="footerp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a id="foot" href="#!" class="text-reset">Help</a>
+                </p>
+              </div>
+              
+              <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 my-3">
+               
+                <h6 class="text-uppercase fw-bold mb-4 text-light">
+                  Contact
+                </h6>
+                <p class="footerp"><i class="fas fa-home me-3"> 1-83/2/3/4, SaroorNagar,<br>Hyderabad, Telangana.<br> 500035.</i></p>
+                <p class="footerp">
+                  <i class="fas fa-envelope me-3"></i>
+                  tbcservices@gmali.com
+                </p>
+                <p class="footerp"><i class="fas fa-phone me-3"></i> + 91 9866783703,704</p>
+                
+              </div>
+              
+            </div>
+            <div class="row">
+                <div class="col-xl-5">
+
+                </div>
+                <div class="wrapper">
+                    <div class="button">
+                  <div class="icon"><i class="fab fa-facebook-f"></i></div>
+                      <span><a style="text-decoration: none;" href="https://www.facebook.com/">Facebook</a></span>
+                    </div>
+                    <div class="button">
+                      <div class="icon"><i class="fab fa-twitter"></i></div>
+                      <span><a style="text-decoration: none;" href="https://twitter.com/">Twitter</a></span>
+                    </div>
+                    <div class="button">
+                      <div class="icon"><i class="fab fa-instagram"></i></div>
+                      <span><a style="text-decoration: none;" href="https://www.instagram.com/">Instagram</a></span>
+                    </div>
+                    <div class="button">
+                      <div class="icon"><i class="fab fa-youtube"></i></div>
+                      <span><a style="text-decoration: none;" href="https://www.youtube.com/">Youtube</a></span>
+                    </div>
+                  </div>
+                  <div class="col-xl-1">
+                  </div>
+            </div>
+          </div>
+        </section>
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+          © 2021 Copyright:
+          <a class="text-reset fw-bold" href="https://mdbootstrap.com/">aryasrikanth73@gmail.com</a>
+        </div>
+       
+      </footer>
+</body>
+</html>

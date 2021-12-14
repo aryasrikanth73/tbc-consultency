@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY PROJECT</title>
+    
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+        <!-- <link rel="stylesheet" href="css/bootstrap.min.css">--> 
+		<!-- <link rel="stylesheet" href="css/bootstrap4.min.css"> -->
+		<!-- <script src="js/jquery.min.js"></script> -->
+		<!-- <script src="js/popper.min.js"></script> -->
+		<!-- <script src="js/bootstrap.min.js"></script> -->
+
+		<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+		<script >
+      setInterval(changeColor,250);
+function changeColor(){
+    var x=document.getElementById("sri");
+    if(x.style.color=="black"){
+        x.style.color="red";
+    }
+    else if(x.style.color=="red"){
+        x.style.color="green";
+    }
+    else if(x.style.color=="green"){
+        x.style.color="blue";
+    }
+    else
+        x.style.color="black";
+}  
+    </script>
+
+		<style>
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+ /* ============ only desktop view ============ */
+ @media all and (min-width: 992px) {
+	.navbar .nav-item .dropdown-menu{  display:block; opacity: 0;  visibility: hidden; transition:.3s; margin-top:0;  }
+	.navbar .nav-item:hover .nav-link{ color: #fff;  }
+	.navbar .dropdown-menu.fade-down{ top:80%; transform: rotateX(-75deg); transform-origin: 0% 0%; }
+	.navbar .dropdown-menu.fade-up{ top:180%;  }
+	.navbar .nav-item:hover .dropdown-menu{ transition: .3s; opacity:1; visibility:visible; top:100%; transform: rotateX(0deg); }
+}		
+   /* ============ desktop view .end// ============ */
+   
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+          overflow-x: hidden;
+        }
+    header{
+        text-align: center;
+        background-color: rgba(94,194,197);
+        padding: 20px;
+    }    
+    #home{
+				 background: #fdfdfd;
+				 color: rgb(12, 6, 0);
+         
+         font-size: large;
+			 }
+      
+  #spark{
+    margin-left:-15px;
+    color:rgb(245, 126, 90);
+    background-color: rgb(238, 243, 245);
+    
+  }
+  #ab{
+     text-align:center;
+     padding:12px;
+     font-family:aparajita;
+     margin-bottom:10px;
+  }
+  #cd{
+    background-color: rgb(197, 194, 190);
+  }
+    /* navigation */
+   ul li{
+        float:left;
+        height:50px;
+        width: 190px;
+        text-align: center;
+    }
+    ul li a:hover{
+        background-color: rgb(134, 195, 235);
+        height: 43px;
+     } 
+     ul li ul li a{
+       color: white;
+     }
+     ul li ul li a:hover{
+       color:rgb(5, 5, 5);
+       background-color: white;
+     }
+   
+   
+    .footerp{
+				color: white;
+			}
+   
+      h6{
+        color:rgb(221, 228, 196);
+      }
+
+      /* modal form */
+      .modal-login {		
+	color: #636363;
+	width: 350px;
+}
+.modal-login .modal-content {
+	padding: 20px;
+	border-radius: 5px;
+	border: none;
+}
+.modal-login .modal-header {
+	border-bottom: none;   
+	position: relative;
+	justify-content: center;
+}
+.modal-login h4 {
+	text-align: center;
+	font-size: 26px;
+	margin: 30px 0 -15px;
+}
+.modal-login .form-control:focus {
+	border-color: #70c5c0;
+}
+.modal-login .form-control, .modal-login .btn {
+	min-height: 40px;
+	border-radius: 3px; 
+}
+.modal-login .close {
+	position: absolute;
+	top: -5px;
+	right: -5px;
+}	
+.modal-login .modal-footer {
+	background: #ecf0f1;
+	border-color: #dee4e7;
+	text-align: center;
+	justify-content: center;
+	margin: 0 -20px -20px;
+	border-radius: 5px;
+	font-size: 13px;
+}
+.modal-login .modal-footer a {
+	color: #999;
+}		
+.modal-login .avatar {
+	position: absolute;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	top: -70px;
+	width: 95px;
+	height: 95px;
+	border-radius: 50%;
+	z-index: 9;
+	background: #60c7c1;
+	padding: 15px;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+.modal-login .avatar img {
+	width: 100%;
+}
+.modal-login.modal-dialog {
+	margin-top: 80px;
+}
+.modal-login .btn, .modal-login .btn:active {
+	color: #fff;
+	border-radius: 4px;
+	background: #60c7c1 !important;
+	text-decoration: none;
+	transition: all 0.4s;
+	line-height: normal;
+	border: none;
+}
+.modal-login .btn:hover, .modal-login .btn:focus {
+	background: #45aba6 !important;
+	outline: none;
+}
+.trigger-btn {
+	display: inline-block;
+	margin: 100px auto;
+}
+
+    .wrapper .button{
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  float: left;
+  margin: 0 5px;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease-out;
+}
+.wrapper .button:hover{
+  width: 200px;
+}
+.wrapper .button .icon{
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  border-radius: 50px;
+  box-sizing: border-box;
+  line-height: 60px;
+  transition: all 0.3s ease-out;
+}
+.wrapper .button:nth-child(1):hover .icon{
+  background: #4267B2;
+}
+.wrapper .button:nth-child(2):hover .icon{
+  background: #1DA1F2;
+}
+.wrapper .button:nth-child(3):hover .icon{
+  background: #E1306C;
+}
+
+
+
+.wrapper .button:nth-child(4):hover .icon{
+  background: #ff0000;
+}
+.wrapper .button .icon i{
+  font-size: 25px;
+  line-height: 60px;
+  transition: all 0.3s ease-out;
+}
+.wrapper .button:hover .icon i{
+  color: #fff;
+}
+.wrapper .button span{
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 60px;
+  margin-left: 10px;
+  transition: all 0.3s ease-out;
+}
+.wrapper .button:nth-child(1) span{
+  color: #4267B2;
+}
+.wrapper .button:nth-child(2) span{
+  color: #1DA1F2;
+}
+.wrapper .button:nth-child(3) span{
+  color: #E1306C;
+}
+.wrapper .button:nth-child(4) span{
+  color: #ff0000;
+}
+#as{
+margin-left:200px;
+margin-top:60px;
+}
+#jay{
+margin-top:60px;
+margin-left:150px;
+}
+p{
+  text-align: justify;
+}
+#foot{
+  color: white;
+  text-decoration: none;
+}
+@media (max-width: 526px) {
+  header .container-fluid img{
+    width: 30%;
+    height: 100%;
+  }
+}
+@media (max-width: 526px) {
+  header .container-fluid h1{
+    font-size: 30px;
+  }
+}
+@media (max-width: 526px) {
+  nav #main_nav ul li{
+    width: auto;
+  }
+}
+@media (max-width: 900px) {
+  nav #main_nav ul li{
+    width: auto;
+  }
+}
+</style>
+</head>
+<body>
+   
+    <header>
+        <div class="container-fluid">
+             <div class="row">
+                <div class="col-lg-2 col-md-4 ">
+                    <img id="logo" src="images\homepage\tbc logo1.png"  alt="NO IMG" width="240px" height="80">
+                </div>
+                <div class="col-lg-7 col-md-8 ">
+                    <center>
+                      <h1 style="margin-top:36px; font-family: Vani; color: white;">TBC Consultency Services</h1>
+                    </center>
+                    </div>
+                    
+                    <div class="col-md-4 col-lg-3 my-4 " >               
+                      <a href ="registration.html" class="btn btn-info " role="button" >Registration</a>
+                    
+   <!-- modal login form -->                 
+                       
+                        <a   href ="#myModal" class="btn btn-info" role="button"  data-toggle="modal">Login</a>
+                      
+                        <div id="myModal" class="modal fade">
+                          <div class="modal-dialog modal-login">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <div class="avatar">
+                                  <img src="459577-middle.pn" alt="Avatar">
+                                </div>				
+                                <h4 class="modal-title">Member Login</h4>	
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                              </div>
+                              <div class="modal-body">
+                                <form action="test.php" method="post">
+                                  <div class="form-group">
+                                    <input type="text" class="form-control" name="username" placeholder="Username" required="required">		
+                                  </div>
+                                  <div class="form-group">
+                                    <input type="password" class="form-control" name="password" placeholder="Password" required="required">	
+                                  </div>        
+                                  <div class="form-group">
+                                    <button type="submit" class="btn btn-primary btn-lg btn-block login-btn">Login</button>
+                                  </div>
+                                </form>
+                              </div>
+                              <div class="modal-footer">
+                                <a href="#">Forgot Password?</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>     
+                                      
+                   </div>
+                  
+                </div>
+            
+        </div>
+    </header>
+    <nav  class="navbar navbar-expand-md bg-dark navbar-dark sticky-top">
+      <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#main_nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="main_nav">
+
+        <ul class="navbar-nav justify-content-center">
+          <li class="nav-item active"> <a id="home" class="nav-link" href="#"><b>Home</b> </a> </li>
+          <li class="nav-item active"><a class="nav-link" href="tbc_about_us.html"> About Us </a></li>
+          <li class="nav-item active"><a class="nav-link" href="tbc_services.html"> Services </a></li>
+          <li class="nav-item active"><a class="nav-link" href="tbc_recruitment.html" >  Recruitments  </a> </li>
+           
+         
+          <li class="nav-item active"><a class="nav-link" href="tbc_contact.html"> Contact us </a></li>
+        </ul>
+      </div>
+    </nav>
+
+   
+   
+
+   <!-- <div class="container"> -->
+    <div class="row">
+        <div class="col-md-9">
+
+            <div id="carouselExampleFade" class="carousel slide carousel-fade " data-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h1 align="left"class="text-light"> Belive yourself 
+                       <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;And<br>
+                         The world will be at your feet</h1></div>
+                    <img src="images\homepage\caro1.png" class="d-block w-100" alt="..." width="800"height="500">
+                
+                  </div>
+                  <div class="carousel-item">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h3 class="text-dark"> Strive not be a success,but rather to be of  </h3></div>
+                    <img src="images\homepage\caro2.jpg" class="d-block w-100" alt="..." width="800"height="500">
+                  </div>
+                  <div class="carousel-item">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h3> DREAM IT.BELIEVE IT.BUILD IT.</h3></div>
+                    <img src="images\homepage\caro3.jpg" class="d-block w-100" alt="..." width="800"height="500">
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+
+        </div>
+        <div class="col-md-3  gutters" id="spark">
+            <br>
+            <h3 align="center" > Notice Board</h3>
+           <hr>
+            <h4><a href="#" class="ml-4">Admissions open*</a></h4><hr>
+            <h4><a href="#" class="ml-4">Placement results*</a></h4><hr>
+            <h4 id="sri">* Latest News<span class="badge badge-danger badge-pill">New</span> 
+            </h4>
+            <marquee behavior="" direction="up" scrollamount="5">
+              <div class="ml-4">
+              <a href="#">► Hire Expert Freelancers - Create a Free Account</a><br><br>
+              <a href="#" >► Operations Engineer, Technical Support Delivery</a><br><br>
+              <a href="#" >► DEO-SENIOR MANAGEMENT ANALYST SUPV - SES State of Florida</a><br>
+                <a href="#">► Credit Analyst, Multifamily Affordable housing</a>
+              </div>
+              </marquee>
+        </div>
+    </div>
+   </div>
+   <div class="bar bg-light">
+      <h1 id="ab" class="display-5"><br>
+        Access a suite of Services that<br> resonates.
+      </h1><br>
+      
+    
+   </div>
+        <div class="row">
+              <div class="card-columns">
+                <div class="card">
+                <img class="card-img-bottom"src="images\homepage\tbc_index_card1.jpg" alt="card image" width="100%" height="200">
+                <div class="card-body text-center">
+                 <h4>consulting Services</h4>
+                 <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora saepe debitis ex at numquam modi corrupti aliquam itaque rem, magni recusandae deleniti, iure vel sint velit quam, magnam officiis! Voluptatibus!</P>
+                 <button type="button"class="btn btn-info">learn more</button>
+                 </div>
+                 </div>
+                 <div class="card">
+                 <img class="card-img-bottom" src="images\homepage\tbc_index_card2.jpeg" alt="card image"width=100% height="200">
+                 <div class ="card-body text-center">
+                   <h4>Contract Staffing</h4>
+                   <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam ratione qui adipisci reprehenderit dolorum, temporibus cum dolore aliquid, doloribus repellat minima distinctio asperiores impedit, perspiciatis ipsam corporis accusantium eos vel.</P>
+                   <button type="button"class="btn btn-info">learn more</button>
+                 </div>
+                 </div>
+            <div class="card">
+                   <img class="class-img-bottom" src="images\homepage\tbc_index_card3.jpg"alt="card image"width="100%" height="200">
+                   <div class="card-body text-center">
+                     <h4>
+                       Recruitment Process
+                     </h4>
+                  <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore iusto voluptatibus quos facere molestias laboriosam odit illum itaque pariatur aut rerum sunt laudantium aspernatur, eum libero qui magnam accusamus dolorum!
+                       </p>
+                  <button type="button"class="btn btn-info">learn more</button>
+                  </div>
+                  </div>
+          <div class="card">
+
+
+
+
+                  <img class="class-img-bottom"src="images\homepage\tbc_index_card4.jpg"alt="card image"width="100%" height="200">
+                  <div class="card-body text-center">
+                   <h4>
+                    Executive Search
+                   </h4>
+                   <p>
+                   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore iusto voluptatibus quos facere molestias laboriosam odit illum itaque pariatur aut rerum sunt laudantium aspernatur, eum libero qui magnam accusamus dolorum!
+                   </p>
+                   <button type="button"class="btn btn-info">learn more</button>
+                   </div>
+                   </div>
+                  <div class="card">
+                    <img class="class-img-bottom"src="images\homepage\caro2.jpg"alt="card image"width="100%" height="200">
+                    <div class="card-body text-center">
+                      <h4>
+                      Permanent Hiring
+                      </h4>
+                    <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore iusto voluptatibus quos facere molestias laboriosam odit illum itaque pariatur aut rerum sunt laudantium aspernatur, eum libero qui magnam accusamus dolorum!
+                  </p>
+                  <button type="button"class="btn btn-info">learn more</button>
+                  </div>
+                  </div>
+                <div class="card">
+                 <img class="class-img-bottom"src="images\homepage\tbc_index_card6.png"alt="card image"width="100%" height="200">
+                  <div class="card-body text-center">
+                   <h4> Payrolling</h4>
+            <p>
+                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore iusto voluptatibus quos facere molestias laboriosam odit illum itaque pariatur aut rerum sunt laudantium aspernatur, eum libero qui magnam accusamus dolorum!
+                      </p>
+              <button type="button"class="btn btn-info">learn more</button>
+                    
+             </div>
+            </div>
+                  
+
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            
+    
+         <img src="images\homepage\poster.jpg" alt="NOT AVAILABLE" srcset="" width="100%">
+    <footer class="text-center text-lg-start bg-light text-muted">
+  
+        <section class="" style="background: rgb(22, 30, 47);">
+          <div class="container text-center text-md-start mt-5">
+           
+            <div class="row mt-3">
+              
+              <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4 my-3">
+                
+                <h6 class="text-uppercase fw-bold mb-4 text-light">
+                  <i class="fas fa-gem me-3" ></i>TBC Consultency Services.
+                </h6>
+                <p class="footerp" style="text-align: justify;">
+                   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates rem id dolorum amet corporis possimus soluta cumque ab exercitationem reprehenderit!
+                </p>
+              </div>
+             
+              <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4 my-3">
+                
+                <h6 class="text-uppercase fw-bold mb-4 text-light" >
+                  Branches
+                </h6>
+                <p class="footerp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a id="foot" href="#!" class="text-reset">Vizag</a>
+                </p>
+                <p class="footerp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a id="foot" href="#!" class="text-reset">Warangal</a>
+                </p class="footerp">
+                <p class="footerp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a id="foot" href="#!" class="text-reset">Hyderabad</a>
+                </p>
+                <p class="footerp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a id="foot" href="#!" class="text-reset">Karimnagar</a>
+                </p>
+              </div>
+              
+              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 my-3">
+                
+                <h6 class="text-uppercase fw-bold mb-4 text-light">
+                  Useful links
+                </h6>
+                <p class="footerp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a id="foot" href="#!" class="text-reset">Pricing</a>
+                </p>
+                <p class="footerp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a id="foot" href="#!" class="text-reset">Settings</a>
+                </p>
+                <p class="footerp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a id="foot" href="#!" class="text-reset">Orders</a>
+                </p>
+                <p class="footerp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a id="foot" href="#!" class="text-reset">Help</a>
+                </p>
+              </div>
+              
+              <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 my-3">
+               
+                <h6 class="text-uppercase fw-bold mb-4 text-light">
+                  Contact
+                </h6>
+                <p class="footerp"><i class="fas fa-home me-3"> 1-83/2/3/4, SaroorNagar,<br>Hyderabad, Telangana.<br> 500035.</i></p>
+                <p class="footerp">
+                  <i class="fas fa-envelope me-3"></i>
+                  tbcservices@gmali.com
+                </p>
+                <p class="footerp"><i class="fas fa-phone me-3"></i> + 91 9866783703,704</p>
+                
+              </div>
+              
+            </div>
+            <div class="row">
+                <div class="col-xl-5">
+
+                </div>
+                <div class="wrapper">
+                    <div class="button">
+                  <div class="icon"><i class="fab fa-facebook-f"></i></div>
+                      <span><a style="text-decoration: none;" href="https://www.facebook.com/">Facebook</a></span>
+                    </div>
+                    <div class="button">
+                      <div class="icon"><i class="fab fa-twitter"></i></div>
+                      <span><a style="text-decoration: none;" href="https://twitter.com/">Twitter</a></span>
+                    </div>
+                    <div class="button">
+                      <div class="icon"><i class="fab fa-instagram"></i></div>
+                      <span><a style="text-decoration: none;" href="https://www.instagram.com/">Instagram</a></span>
+                    </div>
+                    <div class="button">
+                      <div class="icon"><i class="fab fa-youtube"></i></div>
+                      <span><a style="text-decoration: none;" href="https://www.youtube.com/">Youtube</a></span>
+                    </div>
+                  </div>
+                  <div class="col-xl-1">
+                  </div>
+            </div>
+          </div>
+        </section>
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+          © 2021 Copyright:
+          <a class="text-reset fw-bold" href="https://mdbootstrap.com/">aryasrikanth73@gmail.com</a>
+        </div>
+       
+      </footer>
+</body>
+</html>
